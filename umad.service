@@ -1,0 +1,15 @@
+[Unit]
+Description=umabot startup thingy
+After=network-online.target
+StartLimitInterval=200
+StartLimitBurst=5
+
+[Service]
+ExecStart=/srv/uma/akikawa/startup.sh
+Type=simple
+Restart=always
+User=umad
+Group=uma
+WorkingDirectory=/srv/uma/akikawa
+Restart=always
+RestartSec=30
